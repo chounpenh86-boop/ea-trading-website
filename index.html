@@ -1,20 +1,72 @@
 <!doctype html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Smart EA Trading</title>
-<meta name="description" content="Smart EA Trading - MT5 Expert Advisor">
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Smart EA Trading Dashboard</title>
+<meta name="description" content="Smart EA Trading MT5 dashboard">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<header><div class="wrap nav"><a class="brand" href="#">SMART EA</a><nav><a href="#features">Features</a><a href="#setup">Setup</a><a href="#download">Download</a><a href="#contact">Contact</a></nav></div></header>
+<header><div class="wrap nav"><a class="brand" href="#">SMART<span> EA</span></a><nav><a href="#dashboard">Dashboard</a><a href="#markets">Markets</a><a href="#settings">Risk</a><a href="#download">EA</a></nav></div></header>
 <main>
-<section class="hero"><div class="wrap"><span class="pill">MT5 • EA TRADING</span><h1>Smart EA Trading</h1><p>Simple tools for automated trading. Built for MetaTrader 5 with clear setup and risk-control guidance.</p><div class="buttons"><a class="btn primary" href="#download">Get EA</a><a class="btn" href="#setup">How to use</a></div></div></section>
-<section id="features" class="section"><div class="wrap"><h2>Features</h2><div class="grid"><article><b>⚡ Fast execution</b><p>Designed for automated entries and exits through MT5.</p></article><article><b>🛡 Risk control</b><p>Use your own lot size, stop loss and account risk settings.</p></article><article><b>📊 Simple dashboard</b><p>A clean website for accessing your EA package and instructions.</p></article></div></div></section>
-<section id="setup" class="section alt"><div class="wrap"><h2>MT5 Setup</h2><ol><li>Download the EA package below.</li><li>Open MetaTrader 5 on your computer.</li><li>Put the EA file in <b>MQL5 → Experts</b>.</li><li>Restart MT5, open your chart, then attach the EA.</li><li>Enable <b>Algo Trading</b> and test on a demo account first.</li></ol><div class="warning">Trading involves risk. Past performance does not guarantee future results.</div></div></section>
-<section id="download" class="section"><div class="wrap card"><h2>EA Download</h2><p>Download the current package from this website.</p><a class="btn primary" href="EA_Trading_Website.zip" download>Download EA Package</a><p class="small">If your actual MT5 EA is an .ex5 or .mq5 file, replace the package with that file before distributing it.</p></div></section>
-<section id="contact" class="section alt"><div class="wrap"><h2>Contact</h2><p>For EA support or updates, contact the owner.</p><a class="btn" href="mailto:contact@example.com">Email Support</a></div></section>
+<section class="hero"><div class="wrap">
+<div class="status"><i></i> EA ONLINE <b>DEMO</b></div>
+<h1>Smart EA<br><span>Trading Dashboard</span></h1>
+<p>Manage your EA settings and monitor a demo trading dashboard from your phone.</p>
+<div class="buttons"><a class="btn primary" href="#dashboard">Open Dashboard</a><a class="btn" href="#download">Get EA</a></div>
+<div class="note">DEMO MODE — this website does not place real MT5/Exness orders.</div>
+</div></section>
+
+<section id="dashboard" class="section"><div class="wrap">
+<div class="section-head"><div><small>ACCOUNT</small><h2>Dashboard</h2></div><span class="live">● DEMO DATA</span></div>
+<div class="stats">
+<div class="stat"><small>Balance</small><strong id="balance">$10,000.00</strong><em>Demo account</em></div>
+<div class="stat"><small>Equity</small><strong id="equity">$10,125.50</strong><em id="equityChange">+$125.50</em></div>
+<div class="stat"><small>Daily P/L</small><strong id="daily">+$125.50</strong><em>+1.26%</em></div>
+<div class="stat"><small>Open Trades</small><strong id="trades">2</strong><em>Demo positions</em></div>
+</div>
+<div class="panel">
+<div class="panel-title"><b>EA STATUS</b><span class="online">● ONLINE</span></div>
+<div class="status-row"><span>Trading engine</span><b>READY</b></div>
+<div class="status-row"><span>Risk protection</span><b>ACTIVE</b></div>
+<div class="status-row"><span>Execution</span><b>DEMO ONLY</b></div>
+</div>
+</div></section>
+
+<section id="markets" class="section alt"><div class="wrap"><small>MARKET WATCH</small><h2>Markets</h2>
+<div class="markets">
+<article class="market"><div><b>XAUUSD</b><small>Gold</small></div><strong>2,658.40</strong><span class="up">+0.42%</span></article>
+<article class="market"><div><b>EURUSD</b><small>Euro / USD</small></div><strong>1.1748</strong><span class="up">+0.18%</span></article>
+<article class="market"><div><b>GBPUSD</b><small>Pound / USD</small></div><strong>1.3421</strong><span class="down">-0.11%</span></article>
+</div>
+</div></section>
+
+<section id="settings" class="section"><div class="wrap"><small>EA CONTROL</small><h2>Risk Settings</h2>
+<div class="settings panel">
+<label>Lot Size<input id="lot" type="number" value="0.01" min="0.01" step="0.01"></label>
+<label>Stop Loss (points)<input id="sl" type="number" value="300"></label>
+<label>Take Profit (points)<input id="tp" type="number" value="600"></label>
+<button class="btn primary" id="save">Save Demo Settings</button>
+<div id="saved" class="saved">Settings are for demo display only.</div>
+</div>
+<div class="trade-panel">
+<div><b>Quick Trade</b><small>Simulation only</small></div>
+<div class="trade-buttons"><button class="buy" id="buy">BUY</button><button class="sell" id="sell">SELL</button></div>
+<p id="tradeMsg">No demo order selected.</p>
+</div>
+</div></section>
+
+<section id="download" class="section alt"><div class="wrap card">
+<small>MT5 EXPERT ADVISOR</small><h2>EA Package</h2><p>Download the current package from the website and install it on MetaTrader 5 on a computer.</p>
+<a class="btn primary" href="EA_Trading_Website.zip" download>Download EA Package</a>
+<div class="warning">The current ZIP is the package already stored in this repository. Real MT5 trading requires a valid .ex5/.mq5 EA and a connection to MT5.</div>
+</div></section>
+
+<section class="section"><div class="wrap connect">
+<h2>Connect MT5</h2><p>To show real balance, trades, SL/TP and execute orders, this dashboard needs a secure backend/API connected to your MT5 terminal. This version is intentionally DEMO so it cannot accidentally place real trades.</p>
+<span class="btn disabled">MT5 Connection — Not Connected</span>
+</div></section>
 </main>
-<footer><div class="wrap">© 2026 Smart EA Trading</div></footer>
+<footer><div class="wrap">© 2026 Smart EA Trading · DEMO Dashboard</div></footer>
+<script src="script.js"></script>
 </body></html>
